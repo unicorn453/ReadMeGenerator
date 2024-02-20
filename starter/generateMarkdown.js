@@ -18,6 +18,8 @@ function generateMarkdown(answers) {
       "![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)",
   };
   const licenseBadge = licenseBadges[answers.license];
+  const githubLink = `https://github.com/${answers.GitHubName}`;
+  const contactInfo = `For any questions or inquiries, please contact [${answers.GitHubName}](${githubLink}) via email at ${answers.email}.`;
   return `
 # ${answers.title} ${licenseBadge}
 
@@ -48,7 +50,7 @@ ${answers.test}
 This project is licensed under the ${answers.license}.
 
 ## Questions
-For any questions or inquiries, please contact ${answers.GitHubName} via email at ${answers.email}.
+${contactInfo}
 `;
 }
 
